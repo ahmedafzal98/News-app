@@ -1,0 +1,29 @@
+.button {
+    display: flex;
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #005abb !important;
+    color: white;
+    margin-bottom: auto;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 15px;
+    border-color: #323762b7 !important;
+    box-shadow: 0 3px 12px 0 #0000002b !important;
+    padding: 9px 17px !important;
+    cursor: pointer;
+}
+
+.button svg {
+    width: 20px;
+    height: 20px;
+    color: transparent;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #094789 !important;
+}

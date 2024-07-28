@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navigation from './Components/Navigation/Navigation';
+import News from './Components/News/News';
+import { CategoryContext } from './context/CategoryContext'
+import Loader from './Components/UI/Loader';
 
 function App() {
+
+  const [category, setCategory] = useState('Home')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <CategoryContext.Provider value={{ category, setCategory }}>
+        <Navigation />
+
+        <News />
+      </CategoryContext.Provider>
+
+    </>
+  )
 }
 
 export default App;
