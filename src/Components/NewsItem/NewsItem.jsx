@@ -20,7 +20,7 @@ function NewsItem({ articles }) {
                     <details>
                         <summary className={style.summary}>Channel and PublishedAt</summary>
 
-                        <a className={style.channel} href={articles.source.url} target="_blank"><p><span>Channel: </span>{articles.source.name}</p></a>
+                        <a className={style.channel} href={articles.source.url} target="_blank" rel="noreferrer"><p><span>Channel: </span>{articles.source.name}</p></a>
                         <p className={style.published}><span>Published at: </span>{articles.publishedAt}</p>
 
                     </details>

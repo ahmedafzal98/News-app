@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import NewsItem from '../NewsItem/NewsItem'
 import style from './News.module.css'
 import { useFetch } from '../../hooks/useFetch';
