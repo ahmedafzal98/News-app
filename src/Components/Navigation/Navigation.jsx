@@ -1,14 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import style from './Navigation.module.css'
 import logo from '../../assets/logo/news-logo.png'
 import { CategoryContext } from '../../context/CategoryContext'
+import { useFetch } from '../../hooks/useFetch'
 
 function Navigation() {
     const categorize = ['Home', 'General', 'Bussiness', 'Sports', 'Science', 'Health', 'Entertainment', 'Technology']
+    const [searchContent, setSearchContent] = useState("")
     const { setCategory } = useContext(CategoryContext)
+    const { endpoint, setEndpoint, FetchData } = useFetch('', false)
 
     function CategoryClickHandler(index) {
         setCategory(categorize[index])
+    }
+    const HandleSearchClick = async () => {
+        setEndpoint(searchContent);
+        setSearchContent("")
     }
     return (
 
@@ -23,8 +30,8 @@ function Navigation() {
                 })}
             </ul>
             <div className={style.search}>
-                <input type="text" placeholder='Explore News' />
-                <button>Search</button>
+                <input type="text" onChange={(e) => setSearchContent(e.target.value)} value={searchContent} placeholder='Explore News' />
+                <button onClick={HandleSearchClick}>Search</button>
             </div>
         </div>
     )
