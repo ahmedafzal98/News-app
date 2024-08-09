@@ -27,7 +27,7 @@ function Navigation() {
     console.log("Useeffect", category);
 
     setEndpoint(`search?q=${category}`);
-  }, [category]);
+  }, [category]); //You can omit setEndpoint from the dependency array
 
   const HandleSearchClick = async () => {
     setEndpoint(`search?q=${searchContent}`);
