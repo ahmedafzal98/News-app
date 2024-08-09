@@ -1,8 +1,6 @@
 import { createContext } from "react";
 
-export const CategoryContext = createContext({
+export const NewsContext = createContext({
   category: "Home",
   setCategory: () => {},
-  news: [],
-  setNews: () => {},
 });
